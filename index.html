@@ -2,30 +2,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tom's ultimate guide to success</title>
-    <!-- Link to your CSS file -->
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tom's ultimate guide to success</title>
+  <style>
+    /* Reset body */
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
+      background: radial-gradient(circle at top, #000014, #000000); /* deep night sky */
+      color: white; /* make text readable on dark background */
+      font-family: Arial, sans-serif;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Moon */
+    .moon {
+      position: absolute;
+      top: 50px;
+      right: 50px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #FF2400 60%, #800000 100%); /* fiery red moon */
+      box-shadow: 0 0 60px #FF4500; /* glowing effect */
+      animation: pulseGlow 5s infinite alternate; /* pulsing glow */
+      z-index: 0;
+    }
+
+    /* Stars container */
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      z-index: 0;
+    }
+
+    /* Small stars */
+    .stars::before {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      box-shadow:
+        50px 100px white,
+        150px 200px white,
+        250px 50px white,
+        350px 300px white,
+        450px 150px white,
+        550px 250px white,
+        650px 100px white,
+        750px 200px white,
+        850px 50px white,
+        950px 300px white;
+      animation: twinkle 3s infinite alternate;
+    }
+
+    /* Larger stars */
+    .stars::after {
+      content: '';
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: white;
+      border-radius: 50%;
+      box-shadow:
+        100px 50px white,
+        200px 250px white,
+        300px 150px white,
+        400px 300px white,
+        500px 50px white,
+        600px 200px white,
+        700px 250px white,
+        800px 100px white,
+        900px 150px white,
+        1000px 250px white;
+      animation: twinkle 4s infinite alternate;
+    }
+
+    /* Twinkle animation */
+    @keyframes twinkle {
+      from { opacity: 0.2; transform: scale(1); }
+      to   { opacity: 1; transform: scale(1.5); }
+    }
+
+    /* Moon pulsing glow animation */
+    @keyframes pulseGlow {
+      from { box-shadow: 0 0 40px #FF4500; }
+      to   { box-shadow: 0 0 80px #FF6347; }
+    }
+
+    /* Content styling */
+    h1, h2, p {
+      position: relative;
+      z-index: 2; /* keep text above stars and moon */
+      text-align: center;
+      max-width: 800px;
+      margin: 20px auto;
+    }
+  </style>
 </head>
 <body>
-    <h1>FIRST LIVE WEBSITE ✅</h1>
-    <h2>MY TESTAMENTS</h2>
-    <p>
-        Your project structure is now correct. Soon everything will work out as I expect it to. 
-        It might be hard at first but, God willing, everything will fall into place. 
-        Through a very painful and long process I have learnt that growth—and not just any growth—takes time. 
-        Learning a new skill, improving yourself, or just figuring out what your purpose was meant to be is hard, very very hard. 
-        But if you hold on for just long enough and believe, then everything will fall right into place.
-    </p>
+  <h1>FIRST LIVE WEBSITE ✅</h1>
+  <h2>MY TESTAMENTS</h2>
+  <p>
+    Your project structure is now correct. Soon everything will work out as I expect it to. 
+    It might be hard at first but, God willing, everything will fall into place. 
+    Through a very painful and long process I have learnt that growth—and not just any growth—takes time. 
+    Learning a new skill, improving yourself, or just figuring out what your purpose was meant to be is hard, very very hard. 
+    But if you hold on for just long enough and believe, then everything will fall right into place.
+  </p>
 
-    <!-- Stars background -->
-    <div class="stars"></div>
+  <!-- Stars background -->
+  <div class="stars"></div>
 
-    <!-- Moon -->
-    <div class="moon"></div>
+  <!-- Moon -->
+  <div class="moon"></div>
 
-    <!-- Link to your JavaScript file -->
-    <script src="js/script.js"></script>
+  <script>
+    console.log("JavaScript loaded successfully");
+  </script>
 </body>
 </html>
