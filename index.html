@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +18,7 @@
 
     h1, h2, p {
       position: relative;
-      z-index: 3;
+      z-index: 5;
       text-align: center;
       max-width: 800px;
       margin: 20px auto;
@@ -98,8 +97,6 @@
       bottom: 200px;
       width: 100%;
       height: 200px;
-      background: linear-gradient(to top, #2f4f4f, #708090);
-      clip-path: polygon(0% 100%, 20% 40%, 40% 80%, 60% 30%, 80% 70%, 100% 20%, 100% 100%);
       z-index: 2;
     }
 
@@ -107,10 +104,8 @@
       position: absolute;
       bottom: 0;
       left: 50%;
-      width: 200px;
+      width: 400px;
       height: 300px;
-      background: linear-gradient(to bottom, #00bfff, #1e90ff);
-      border-radius: 50% 50% 0 0;
       transform: translateX(-50%);
       z-index: 2;
     }
@@ -149,4 +144,65 @@
     }
     @keyframes planetDrift {
       from { transform: translateY(0px); }
-      to
+      to   { transform: translateY(30px); }
+    }
+    @keyframes shoot {
+      0% { top: -100px; opacity: 0; }
+      30% { opacity: 1; }
+      100% { top: 600px; left: 1200px; opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>FIRST LIVE WEBSITE ✅</h1>
+  <h2>MY TESTAMENTS</h2>
+  <p>
+    Your project structure is now correct. Soon everything will work out as I expect it to. 
+    It might be hard at first but, God willing, everything will fall into place. 
+    Through a very painful and long process I have learnt that growth—and not just any growth—takes time. 
+    Learning a new skill, improving yourself, or just figuring out what your purpose was meant to be is hard, very very hard. 
+    But if you hold on for just long enough and believe, then everything will fall right into place.
+  </p>
+
+  <!-- Cosmic elements -->
+  <div class="stars"></div>
+  <div class="moon"></div>
+  <div class="planet"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+
+  <!-- Earthly paradise -->
+  <svg class="mountains" viewBox="0 0 800 200" preserveAspectRatio="none">
+    <polygon points="0,200 200,50 400,150 600,30 800,200" fill="#556B2F"/>
+  </svg>
+
+  <svg class="river" viewBox="0 0 800 200" preserveAspectRatio="none">
+    <path d="M400,0 C420,50 380,100 400,200" stroke="#1E90FF" stroke-width="40" fill="none"/>
+  </svg>
+
+  <div class="garden"></div>
+
+  <!-- Animal silhouettes -->
+  <div class="animals">
+    <!-- Deer silhouette -->
+    <svg viewBox="0 0 64 64"><path d="M20 50 L25 30 L30 50 Z M25 30 L35 20 L40 25 L30 35 Z"/></svg>
+    <!-- Elephant silhouette -->
+    <svg viewBox="0 0 64 64"><path d="M10 40 Q20 20 40 20 Q50 20 55 40 L50 50 L20 50 Z"/></svg>
+    <!-- Bird silhouette -->
+    <svg viewBox="0 0 64 64"><path d="M10 30 Q20 10 40 30 Q20 20 10 30 Z"/></svg>
+  </div>
+
+  <script>
+    console.log("JavaScript loaded successfully");
+
+    // Interactive constellations: stars shift with mouse movement
+    document.body.addEventListener("mousemove", (e) => {
+      const stars = document.querySelector(".stars");
+      let x = (e.clientX / window.innerWidth) * 20;
+      let y = (e.clientY / window.innerHeight) * 20;
+      stars.style.transform = `translate(${x}px, ${y}px)`;
+    });
+  </script>
+</body>
+</html>
