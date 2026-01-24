@@ -11,11 +11,10 @@
       padding: 0;
       height: 100vh;
       overflow: hidden;
-      background: linear-gradient(to bottom, #1a0033, #330066, #660099); /* multistellar sky */
+      background: radial-gradient(circle at top, #1a0033, #330066, #660099, #9900cc); /* multistellar sky */
       color: white;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       position: relative;
-      z-index: 1;
     }
 
     h1, h2, p {
@@ -37,32 +36,31 @@
       background: linear-gradient(to right, #FF2400 50%, #00BFFF 50%);
       box-shadow: 0 0 60px #FF4500;
       animation: pulseGlow 5s infinite alternate;
-      z-index: 0;
+      z-index: 1;
     }
 
     /* Martian-style planet */
     .planet {
       position: absolute;
-      top: 100px;
+      top: 120px;
       right: 300px;
       width: 120px;
       height: 120px;
       border-radius: 50%;
       background: radial-gradient(circle, #b22222, #8b0000, #2f4f4f);
       box-shadow: 0 0 30px #ff6347;
-      z-index: 0;
+      z-index: 1;
     }
 
-    /* Stars and shooting stars */
+    /* Stars background */
     .stars {
       position: absolute;
       width: 100%;
       height: 100%;
-      background: transparent;
       z-index: 0;
     }
 
-    .stars::before {
+    .stars::before, .stars::after {
       content: '';
       position: absolute;
       width: 2px;
@@ -83,14 +81,33 @@
       animation: twinkle 3s infinite alternate;
     }
 
+    /* Shooting stars */
     .shooting-star {
       position: absolute;
       width: 2px;
-      height: 100px;
+      height: 80px;
       background: white;
       transform: rotate(45deg);
+      opacity: 0;
       animation: shoot 6s infinite;
-      opacity: 0.7;
+    }
+
+    .shooting-star:nth-child(1) {
+      top: 0;
+      left: 100px;
+      animation-delay: 1s;
+    }
+
+    .shooting-star:nth-child(2) {
+      top: 0;
+      left: 300px;
+      animation-delay: 3s;
+    }
+
+    .shooting-star:nth-child(3) {
+      top: 0;
+      left: 500px;
+      animation-delay: 5s;
     }
 
     @keyframes twinkle {
@@ -104,21 +121,9 @@
     }
 
     @keyframes shoot {
-      0% {
-        top: -100px;
-        left: 0;
-        opacity: 0;
-      }
-      50% {
-        top: 300px;
-        left: 600px;
-        opacity: 1;
-      }
-      100% {
-        top: 600px;
-        left: 1200px;
-        opacity: 0;
-      }
+      0% { top: -100px; opacity: 0; }
+      30% { opacity: 1; }
+      100% { top: 600px; left: 1000px; opacity: 0; }
     }
   </style>
 </head>
@@ -137,6 +142,8 @@
   <div class="stars"></div>
   <div class="moon"></div>
   <div class="planet"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
   <div class="shooting-star"></div>
 
   <script>
