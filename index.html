@@ -9,10 +9,7 @@
       margin: 0;
       padding: 0;
       min-height: 100vh; /* allow scrolling if content grows */
-      background: radial-gradient(circle at top, #000014, #000000),
-                  url("images/starfield.jpg"); /* make sure this image exists in /images */
-      background-size: cover;
-      background-position: center;
+      background: radial-gradient(circle at top, #000014, #000000); /* deep night sky */
       color: white;
       font-family: Arial, sans-serif;
       display: flex;
@@ -29,3 +26,101 @@
 
     h2 {
       font-size: 1.8em;
+      margin-bottom: 1em;
+    }
+
+    h3 {
+      font-size: 1.4em;
+      margin-bottom: 1em;
+    }
+
+    p {
+      max-width: 700px;
+      line-height: 1.6;
+      font-size: 1.1em;
+    }
+
+    /* Navigation links */
+    nav {
+      margin-top: 20px;
+    }
+    nav a {
+      color: #00ff00; /* green links */
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #00cc00; /* darker green on hover */
+      text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+    }
+
+    /* Scroll Down Button */
+    .scroll-down {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #00ff00;
+      color: black;
+      border: none;
+      border-radius: 25px;
+      padding: 12px 24px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .scroll-down:hover {
+      background-color: #00cc00;
+      transform: translateX(-50%) scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>FIRST LIVE WEBSITE ✅</h1>
+  <h2>MY TESTAMENTS</h2>
+  <h3>THE GREEN CONVERSATION</h3>
+  <p>
+    Your project structure is now correct. Soon everything will work out as I expect it to. 
+    It might be hard at first but, God willing, everything will fall into place. 
+    Through a very painful and long process I have learnt that growth—and not just any growth—takes time. 
+    Learning a new skill, improving yourself, or just figuring out what your purpose was meant to be is hard, very very hard. 
+    But if you hold on for just long enough and believe, then everything will fall right into place.
+  </p>
+
+  <!-- Navigation Links -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Scroll Down Button -->
+  <button class="scroll-down" onclick="scrollDown()">Scroll Down</button>
+
+  <script>
+    function scrollDown() {
+      window.scrollBy({
+        top: window.innerHeight,
+        behavior: 'smooth'
+      });
+    }
+
+    // Highlight active nav link
+    document.addEventListener("DOMContentLoaded", () => {
+      const links = document.querySelectorAll("nav a");
+      const currentPage = window.location.pathname.split("/").pop();
+      links.forEach(link => {
+        if (link.getAttribute("href") === currentPage) {
+          link.style.color = "#00cc00";
+          link.style.textDecoration = "underline";
+        }
+      });
+    });
+
+    console.log("JavaScript loaded successfully");
+  </script>
+</body>
+</html>
