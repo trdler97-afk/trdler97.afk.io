@@ -50,6 +50,30 @@
       text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
     }
 
+    /* Arrow buttons */
+    .arrow-buttons {
+      position: absolute;
+      bottom: 80px;
+      display: flex;
+      justify-content: space-between;
+      width: 120px;
+    }
+    .arrow-btn {
+      background-color: #00ffcc;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .arrow-btn:hover {
+      background-color: #00ffff;
+      transform: scale(1.1);
+    }
+
     /* Stars effect */
     .stars {
       position: absolute;
@@ -61,7 +85,6 @@
       overflow: hidden;
       z-index: -1;
     }
-
     .stars::before, .stars::after {
       content: '';
       position: absolute;
@@ -82,7 +105,6 @@
         950px 300px white;
       animation: twinkle 6s infinite alternate;
     }
-
     .stars::after {
       box-shadow:
         100px 50px white,
@@ -97,7 +119,6 @@
         1000px 250px white;
       animation: twinkle 8s infinite alternate;
     }
-
     @keyframes twinkle {
       from { opacity: 0.3; transform: translateY(0px); }
       to   { opacity: 1; transform: translateY(-10px); }
@@ -118,5 +139,13 @@
     <a href="index.html">Home</a> |
     <a href="about.html">About</a>
   </nav>
+
+  <!-- Arrow Buttons -->
+  <div class="arrow-buttons">
+    <!-- Left arrow goes to About (loop backwards) -->
+    <button class="arrow-btn" onclick="location.href='about.html'">&#8592;</button>
+    <!-- Right arrow goes to Index (loop forwards) -->
+    <button class="arrow-btn" onclick="location.href='index.html'">&#8594;</button>
+  </div>
 </body>
 </html>
