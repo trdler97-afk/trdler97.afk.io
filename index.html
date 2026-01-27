@@ -36,6 +36,17 @@
       max-width: 700px;
       line-height: 1.6;
       font-size: 1.1em;
+     <button class="scroll-down" onclick="scrollDown()">Scroll Down</button>
+
+<script>
+  function scrollDown() {
+    window.scrollBy({
+      top: window.innerHeight,
+      behavior: 'smooth'
+    });
+  }
+</script>
+ 
     }
   </style>
 </head>
