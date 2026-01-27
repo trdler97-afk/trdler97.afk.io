@@ -21,7 +21,6 @@
       position: relative;
     }
 
-    /* Headings with underline in opposite color */
     h1, h2, h3 {
       text-decoration: underline;
       text-decoration-color: #ffff00; /* bright yellow underline */
@@ -34,7 +33,6 @@
       font-size: 1.1em;
     }
 
-    /* Navigation links */
     nav {
       margin-top: 20px;
     }
@@ -70,6 +68,23 @@
       transition: background-color 0.3s ease, transform 0.3s ease;
     }
     .arrow-btn:hover {
+      background-color: #00ffff;
+      transform: scale(1.1);
+    }
+
+    /* Enter button */
+    #openBtn {
+      background-color: #00ffcc;
+      border: none;
+      border-radius: 25px;
+      padding: 12px 24px;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      margin-top: 20px;
+    }
+    #openBtn:hover {
       background-color: #00ffff;
       transform: scale(1.1);
     }
@@ -128,23 +143,36 @@
 <body>
   <div class="stars"></div>
 
-  <h1>COSMIC ORIGINS</h1>
-  <p>
-    In many ways, my life has been shaped not only by those around me but by the changes to my world which are inherent of the cosmic forces by which I wield no power to sway in my favour but only by the glory of those who went before us and those who will come after us and look at us with nothing but pity, for this shall all come to pass.
-  </p>
+  <!-- Enter button -->
+  <button id="openBtn">Enter Site</button>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="index.html">Home</a> |
-    <a href="contact.html">Contact</a>
-  </nav>
+  <!-- Hidden content -->
+  <div id="siteContent" style="display: none;">
+    <h1>COSMIC ORIGINS</h1>
+    <p>
+      In many ways, my life has been shaped not only by those around me but by the changes to my world which are inherent of the cosmic forces by which I wield no power to sway in my favour but only by the glory of those who went before us and those who will come after us and look at us with nothing but pity, for this shall all come to pass.
+    </p>
 
-  <!-- Arrow Buttons -->
-  <div class="arrow-buttons">
-    <!-- Left arrow goes to Index (loop backwards) -->
-    <button class="arrow-btn" onclick="location.href='index.html'">&#8592;</button>
-    <!-- Right arrow goes to Contact (loop forwards) -->
-    <button class="arrow-btn" onclick="location.href='contact.html'">&#8594;</button>
+    <!-- Navigation -->
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Arrow Buttons -->
+    <div class="arrow-buttons">
+      <!-- Left arrow goes to Index (loop backwards) -->
+      <button class="arrow-btn" onclick="location.href='index.html'">&#8592;</button>
+      <!-- Right arrow goes to Contact (loop forwards) -->
+      <button class="arrow-btn" onclick="location.href='contact.html'">&#8594;</button>
+    </div>
   </div>
+
+  <script>
+    document.getElementById("openBtn").addEventListener("click", function() {
+      document.getElementById("siteContent").style.display = "block";
+      this.style.display = "none"; // hide button after click
+    });
+  </script>
 </body>
 </html>
