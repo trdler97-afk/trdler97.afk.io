@@ -8,9 +8,9 @@
     body {
       margin: 0;
       padding: 0;
-      height: 100vh;
+      min-height: 100vh; /* allow scrolling if content grows */
       background: radial-gradient(circle at top, #000014, #000000),
-                  url("images/starfield.jpg"); /* <-- replace with your actual image path */
+                  url("images/starfield.jpg"); /* make sure this image exists in /images */
       background-size: cover;
       background-position: center;
       color: white;
@@ -29,24 +29,3 @@
 
     h2 {
       font-size: 1.8em;
-      margin-bottom: 1em;
-    }
-
-    h3 {
-      font-size: 1.4em;
-      margin-bottom: 1em;
-    }
-
-    p {
-      max-width: 700px;
-      line-height: 1.6;
-      font-size: 1.1em;
-    }
-
-    /* Navigation links */
-    nav {
-      margin-top: 20px;
-    }
-
-    nav a {
-      color: #00ff00; /* green
