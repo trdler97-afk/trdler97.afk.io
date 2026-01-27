@@ -22,7 +22,29 @@ function setActiveLink() {
   });
 }
 
+// Opening and closing toggle
+function setupOpenClose() {
+  const openBtn = document.getElementById("openBtn");
+  const closeBtn = document.getElementById("closeBtn");
+  const siteContent = document.getElementById("siteContent");
+
+  if (openBtn && closeBtn && siteContent) {
+    // Show content
+    openBtn.addEventListener("click", () => {
+      siteContent.style.display = "block";
+      openBtn.style.display = "none";
+    });
+
+    // Hide content
+    closeBtn.addEventListener("click", () => {
+      siteContent.style.display = "none";
+      openBtn.style.display = "inline-block";
+    });
+  }
+}
+
 // Run when page loads
 document.addEventListener("DOMContentLoaded", () => {
   setActiveLink();
+  setupOpenClose();
 });
