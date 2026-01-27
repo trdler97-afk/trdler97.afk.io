@@ -77,3 +77,25 @@ body {
     from { opacity: 0.2; transform: scale(1); }
     to   { opacity: 1; transform: scale(1.5); }
 }
+/* Scroll Down Button */
+.scroll-down {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #00ff00; /* bright green */
+    color: black;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-down:hover {
+    background-color: #00cc00; /* darker green on hover */
+    transform: translateX(-50%) scale(1.1);
+}
+
