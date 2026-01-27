@@ -21,7 +21,6 @@
       position: relative;
     }
 
-    /* Headings with underline in opposite color */
     h1, h2, h3 {
       text-decoration: underline;
       text-decoration-color: #ffff00; /* bright yellow underline */
@@ -34,7 +33,6 @@
       font-size: 1.1em;
     }
 
-    /* Navigation links */
     nav {
       margin-top: 20px;
     }
@@ -50,25 +48,28 @@
       text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
     }
 
-    /* Scroll Down Button */
-    .scroll-down {
+    /* Arrow buttons */
+    .arrow-buttons {
       position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #00ff00;
-      color: black;
+      bottom: 80px;
+      display: flex;
+      justify-content: space-between;
+      width: 120px;
+    }
+    .arrow-btn {
+      background-color: #00ffcc;
       border: none;
-      border-radius: 25px;
-      padding: 12px 24px;
-      font-size: 16px;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
       cursor: pointer;
-      box-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
       transition: background-color 0.3s ease, transform 0.3s ease;
     }
-    .scroll-down:hover {
-      background-color: #00cc00;
-      transform: translateX(-50%) scale(1.1);
+    .arrow-btn:hover {
+      background-color: #00ffff;
+      transform: scale(1.1);
     }
 
     /* Stars effect */
@@ -82,7 +83,6 @@
       overflow: hidden;
       z-index: -1;
     }
-
     .stars::before, .stars::after {
       content: '';
       position: absolute;
@@ -103,7 +103,6 @@
         950px 300px white;
       animation: twinkle 6s infinite alternate;
     }
-
     .stars::after {
       box-shadow:
         100px 50px white,
@@ -118,7 +117,6 @@
         1000px 250px white;
       animation: twinkle 8s infinite alternate;
     }
-
     @keyframes twinkle {
       from { opacity: 0.3; transform: translateY(0px); }
       to   { opacity: 1; transform: translateY(-10px); }
@@ -143,3 +141,13 @@
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
   </nav>
+
+  <!-- Arrow Buttons -->
+  <div class="arrow-buttons">
+    <!-- Left arrow goes to Contact (loop backwards) -->
+    <button class="arrow-btn" onclick="location.href='contact.html'">&#8592;</button>
+    <!-- Right arrow goes to About (loop forwards) -->
+    <button class="arrow-btn" onclick="location.href='about.html'">&#8594;</button>
+  </div>
+</body>
+</html>
