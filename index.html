@@ -10,7 +10,7 @@
       padding: 0;
       height: 100vh;
       background: radial-gradient(circle at top, #000014, #000000),
-                  url('C:\Users\Tommark mwenda\OneDrive\Desktop\two on two\images.html.zip');
+                  url("images/starfield.jpg"); /* <-- replace with your actual image path */
       background-size: cover;
       background-position: center;
       color: white;
@@ -36,17 +36,28 @@
       max-width: 700px;
       line-height: 1.6;
       font-size: 1.1em;
-     <button class="scroll-down" onclick="scrollDown()">Scroll Down</button>
+    }
 
-<script>
-  function scrollDown() {
-    window.scrollBy({
-      top: window.innerHeight,
-      behavior: 'smooth'
-    });
-  }
-</script>
- 
+    /* Scroll Down Button */
+    .scroll-down {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #00ff00; /* bright green */
+      color: black;
+      border: none;
+      border-radius: 25px;
+      padding: 12px 24px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .scroll-down:hover {
+      background-color: #00cc00; /* darker green on hover */
+      transform: translateX(-50%) scale(1.1);
     }
   </style>
 </head>
@@ -61,7 +72,17 @@
     But if you hold on for just long enough and believe, then everything will fall right into place.
   </p>
 
+  <!-- Scroll Down Button -->
+  <button class="scroll-down" onclick="scrollDown()">Scroll Down</button>
+
   <script>
+    function scrollDown() {
+      window.scrollBy({
+        top: window.innerHeight,
+        behavior: 'smooth'
+      });
+    }
+
     console.log("JavaScript loaded successfully");
   </script>
 </body>
