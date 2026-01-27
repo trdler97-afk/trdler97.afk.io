@@ -1,87 +1,50 @@
-/* Reset body */
 body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh; /* allow scrolling if content is taller */
-    background: radial-gradient(circle at top, #000014, #000000); /* deep night sky */
-    color: white;
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #000014, #000000); /* deep night sky */
+  color: white;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
 }
 
-/* Headings */
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 0.5em;
-}
-h2 {
-    font-size: 1.8em;
-    margin-bottom: 1em;
-}
-h3 {
-    font-size: 1.4em;
-    margin-bottom: 1em;
-}
-
-/* Paragraphs */
-p {
-    max-width: 700px;
-    line-height: 1.6;
-    font-size: 1.1em;
-}
-
-/* Navigation links */
-nav {
-    margin-top: 20px;
-}
-nav a {
-    color: #00ff00; /* bright green links */
-    text-decoration: none;
-    margin: 0 10px;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-nav a:hover {
-    color: #00cc00; /* darker green on hover */
-    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00; /* glowing effect */
+/* Stars effect */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: transparent;
+  box-shadow:
+    50px 100px white,
+    150px 200px white,
+    250px 50px white,
+    350px 300px white,
+    450px 150px white,
+    550px 250px white,
+    650px 100px white,
+    750px 200px white,
+    850px 50px white,
+    950px 300px white,
+    100px 50px white,
+    200px 250px white,
+    300px 150px white,
+    400px 300px white,
+    500px 50px white,
+    600px 200px white,
+    700px 250px white,
+    800px 100px white,
+    900px 150px white,
+    1000px 250px white;
+  animation: twinkle 4s infinite alternate;
 }
 
-/* Moon */
-.moon {
-    position: absolute;
-    top: 50px;
-    right: 50px;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background: radial-gradient(circle, #FF2400 60%, #800000 100%);
-    box-shadow: 0 0 60px #FF4500;
+@keyframes twinkle {
+  from { opacity: 0.2; }
+  to   { opacity: 1; }
 }
-
-/* Stars container */
-.stars {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: transparent;
-}
-
-/* Small stars */
-.stars::before {
-    content: '';
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background: white;
-    border-radius: 50%;
-    box-shadow:
-        50px 100px white,
-        150px 200px white,
-        250px 50px white,
-        350px 300px white,
-        450px 150px white,
-        550px 
