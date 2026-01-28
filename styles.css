@@ -3,9 +3,20 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  background: radial-gradient(circle at top, #001f4d, #000033); /* deep blue night sky */
-  color: white;
   font-family: Arial, sans-serif;
+  color: #333;
+  background: #f4f4f4; /* default background for content pages */
+  transition: opacity 0.4s ease-in-out;
+  opacity: 0;
+}
+body.fade-in {
+  opacity: 1;
+}
+
+/* Cosmic background (for index or special pages) */
+body.cosmic {
+  background: radial-gradient(circle at top, #001f4d, #000033);
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,30 +24,17 @@ body {
   text-align: center;
   overflow: hidden;
   position: relative;
-
-  /* Smooth page transition */
-  opacity: 0;
-  transition: opacity 0.4s ease-in-out;
-}
-body.fade-in {
-  opacity: 1;
 }
 
-/* Active link styling */
-nav a.active-link {
-  color: #00cc00;
-  text-decoration: underline;
-}
-
-/* Optimized Stars effect */
-.stars {
+/* Stars effect (only for cosmic pages) */
+.cosmic .stars {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
   pointer-events: none;
   z-index: -1;
 }
-.stars::before {
+.cosmic .stars::before {
   content: "";
   position: absolute;
   width: 2px; height: 2px;
@@ -51,27 +49,141 @@ nav a.active-link {
     1000px 220px white;
   animation: twinkle 5s infinite alternate;
 }
-
 @keyframes twinkle {
   from { opacity: 0.4; }
   to   { opacity: 1; }
 }
 
+/* Navigation bar */
+nav {
+  background: #009977;
+  padding: 10px;
+  text-align: center;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav li {
+  display: inline;
+  margin: 0 10px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+nav a:hover {
+  color: #00ffff;
+}
+nav a.active-link {
+  color: #00cc00;
+  text-decoration: underline;
+}
+
+/* Headers */
+header {
+  background: #00cc99;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Section cards (shops, news, events, activities) */
+.shop, .news-item, .event, .activity {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1.5rem auto;
+  max-width: 900px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.shop h3, .news-item h2, .event h2, .activity h2 {
+  color: #00cc99;
+  margin-top: 0;
+}
+
 /* Buttons */
-#openBtn, #closeBtn, .shopsBtn {
-  background-color: #00ffcc;
+#openBtn, #closeBtn, .shopsBtn, .arrow-btn, .next-page a, .nav-buttons a, .back-link {
+  background-color: #00cc99;
   border: none;
   border-radius: 25px;
   padding: 12px 24px;
-  font-size: 18px;
+  font-size: 16px;
   cursor: pointer;
   box-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
   transition: background-color 0.3s ease, transform 0.3s ease;
-  margin-top: 20px;
-  color: #000033;
+  color: white;
   font-weight: bold;
+  text-decoration: none;
 }
-#openBtn:hover, #closeBtn:hover, .shopsBtn:hover {
+#openBtn:hover, #closeBtn:hover, .shopsBtn:hover,
+.arrow-btn:hover, .next-page a:hover, .nav-buttons a:hover, .back-link:hover {
   background-color: #00ffff;
   transform: scale(1.05);
+  color: #333;
+}
+
+/* Arrow buttons */
+.arrow-buttons, .nav-buttons, .next-page {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem auto;
+  max-width: 300px;
+}
+.arrow-btn {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+}
+
+/* Search box */
+#search-box {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  margin-top: 10px;
+}
+#search-box.show {
+  max-height: 60px;
+  opacity: 1;
+}
+#search-input {
+  padding: 8px;
+  width: 200px;
+  border: 2px solid #00cc99;
+  border-radius: 5px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+}
+
+/* Message/Statement sections */
+.message, .statement {
+  background: #009977;
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 900px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.6s ease;
+}
+.message.highlight, .statement.highlight {
+  opacity: 1;
+  transform: translateY(0);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.6); /* subtle glow */
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #009977;
+  color: white;
 }
