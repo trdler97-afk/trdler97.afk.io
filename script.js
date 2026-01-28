@@ -16,36 +16,9 @@ function setActiveLink() {
 
   links.forEach(link => {
     if (link.getAttribute("href") === currentPage) {
-      link.classList.add("active-link"); // use CSS class instead of inline styles
+      link.classList.add("active-link"); // CSS handles styling
     }
   });
-}
-
-// Opening and closing toggle
-function setupOpenClose() {
-  const openBtn = document.getElementById("openBtn");
-  const closeBtn = document.getElementById("closeBtn");
-  const siteContent = document.getElementById("siteContent");
-
-  if (openBtn && closeBtn && siteContent) {
-    openBtn.addEventListener("click", () => {
-      siteContent.style.display = "block";
-      openBtn.style.display = "none";
-    });
-
-    closeBtn.addEventListener("click", () => {
-      siteContent.style.display = "none";
-      openBtn.style.display = "inline-block";
-    });
-  }
-}
-
-// Toggle dropdown menu
-function toggleMenu() {
-  const dropdown = document.getElementById("dropdown");
-  if (dropdown) {
-    dropdown.classList.toggle("show");
-  }
 }
 
 // Toggle search box with smooth animation
@@ -54,7 +27,8 @@ function toggleSearchBox() {
   if (box) {
     box.classList.toggle("show");
     if (box.classList.contains("show")) {
-      document.getElementById("search-input").focus();
+      const input = document.getElementById("search-input");
+      if (input) input.focus();
     }
   }
 }
@@ -109,10 +83,26 @@ function setupPageTransitions() {
   });
 }
 
+// Animate message/statement sections when they appear
+function setupMessageAnimations() {
+  const messages = document.querySelectorAll(".message, .statement");
+  if (!messages.length) return;
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("highlight");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  messages.forEach(msg => observer.observe(msg));
+}
+
 // Run when page loads
 document.addEventListener("DOMContentLoaded", () => {
   setActiveLink();
-  setupOpenClose();
   setupSearch();
   setupPageTransitions();
+  setupMessageAnimations();
 });
