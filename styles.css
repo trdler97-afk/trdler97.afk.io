@@ -91,8 +91,8 @@ header {
   text-align: center;
 }
 
-/* Section cards (shops, news, events, activities) */
-.shop, .news-item, .event, .activity {
+/* Section cards (unified for all pages) */
+.shop, .news-item, .event, .activity, .about, .contact, .home {
   background: white;
   border-radius: 8px;
   padding: 1rem;
@@ -100,7 +100,8 @@ header {
   max-width: 900px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
-.shop h3, .news-item h2, .event h2, .activity h2 {
+.shop h3, .news-item h2, .event h2, .activity h2,
+.about h2, .contact h2, .home h2 {
   color: #00cc99;
   margin-top: 0;
 }
@@ -127,7 +128,7 @@ header {
 }
 
 /* Arrow buttons */
-.arrow-buttons, .nav-buttons, .next-page {
+.arrow-buttons, .nav-buttons, .page-navigation, .next-page {
   display: flex;
   justify-content: space-between;
   margin: 2rem auto;
