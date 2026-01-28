@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cosmic Site</title>
+  <link rel="stylesheet" href="styles.css"> <!-- external stylesheet -->
   <style>
     body {
       margin: 0;
@@ -21,44 +22,36 @@
       position: relative;
     }
 
-    /* Stars effect */
-    body::before {
-      content: "";
+    /* Optimized Stars effect */
+    .stars {
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: transparent;
-      box-shadow:
-        50px 100px white,
-        150px 200px white,
-        250px 50px white,
-        350px 300px white,
-        450px 150px white,
-        550px 250px white,
-        650px 100px white,
-        750px 200px white,
-        850px 50px white,
-        950px 300px white,
-        100px 50px white,
-        200px 250px white,
-        300px 150px white,
-        400px 300px white,
-        500px 50px white,
-        600px 200px white,
-        700px 250px white,
-        800px 100px white,
-        900px 150px white,
-        1000px 250px white;
-      animation: twinkle 4s infinite alternate;
+      pointer-events: none;
       z-index: -1;
+    }
+    .stars::before {
+      content: "";
+      position: absolute;
+      width: 2px; height: 2px;
+      background: white;
+      border-radius: 50%;
+      box-shadow:
+        80px 120px white,
+        200px 180px white,
+        400px 90px white,
+        600px 250px white,
+        800px 150px white,
+        1000px 220px white;
+      animation: twinkle 5s infinite alternate;
     }
 
     @keyframes twinkle {
-      from { opacity: 0.2; }
+      from { opacity: 0.4; }
       to   { opacity: 1; }
     }
 
-    /* Enter/Close buttons */
+    /* Buttons */
     #openBtn, #closeBtn, .shopsBtn {
       background-color: #00ffcc;
       border: none;
@@ -66,7 +59,7 @@
       padding: 12px 24px;
       font-size: 18px;
       cursor: pointer;
-      box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+      box-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
       transition: background-color 0.3s ease, transform 0.3s ease;
       margin-top: 20px;
       color: #000033;
@@ -74,11 +67,14 @@
     }
     #openBtn:hover, #closeBtn:hover, .shopsBtn:hover {
       background-color: #00ffff;
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
   </style>
 </head>
 <body>
+  <!-- Stars background -->
+  <div class="stars"></div>
+
   <!-- Enter button -->
   <button id="openBtn">Enter Site</button>
 
