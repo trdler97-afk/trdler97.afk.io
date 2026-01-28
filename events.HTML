@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events | Tommark</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #0b0c10;
+      color: #c5c6c7;
+    }
+    header {
+      background: #1f2833;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav a {
+      color: #66fcf1;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .events-container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    .event {
+      background: #1f2833;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    }
+    .event h2 {
+      color: #66fcf1;
+      margin-top: 0;
+    }
+    .event time {
+      display: block;
+      font-size: 0.9rem;
+      color: #45a29e;
+      margin-bottom: 0.5rem;
+    }
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin: 2rem auto;
+      max-width: 300px;
+    }
+    .nav-buttons button {
+      background: #45a29e;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      border-radius: 6px;
+      color: #0b0c10;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .nav-buttons button:hover {
+      background: #66fcf1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Upcoming Events</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="events-container">
+    <section class="event">
+      <h2>Cosmic Design Workshop</h2>
+      <time datetime="2026-02-15">February 15, 2026</time>
+      <p>Join us for a hands‑on workshop exploring cosmic themes in web design.</p>
+    </section>
+
+    <section class="event">
+      <h2>Personal Branding Seminar</h2>
+      <time datetime="2026-03-01">March 1, 2026</time>
+      <p>A seminar on building authentic online presence and aesthetic consistency.</p>
+    </section>
+
+    <section class="event">
+      <h2>Community Showcase</h2>
+      <time datetime="2026-04-10">April 10, 2026</time>
+      <p>Showcase your projects, share your journey, and connect with fellow creators.</p>
+    </section>
+
+    <!-- Forward/Backward buttons -->
+    <div class="nav-buttons">
+      <button onclick="goBack()">&#8592; Back</button>
+      <button onclick="goForward()">Forward &#8594;</button>
+    </div>
+  </main>
+
+  <footer style="text-align:center; padding:1rem; background:#1f2833;">
+    <p>&copy; 2026 Tommark. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+    function goForward() {
+      window.history.forward();
+    }
+  </script>
+</body>
+</html>
+
