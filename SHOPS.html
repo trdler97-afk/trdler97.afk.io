@@ -32,10 +32,6 @@
     nav a:hover {
       color: #00ffff;
     }
-    #map {
-      width: 100%;
-      height: 400px;
-    }
     .shop-list {
       padding: 20px;
     }
@@ -94,7 +90,7 @@
 <body>
   <header>
     <h1>Our Shops</h1>
-    <p>See real-time locations and opening hours</p>
+    <p>See locations and opening hours</p>
   </header>
 
   <!-- Navigation bar -->
@@ -104,9 +100,6 @@
     <a href="contact.html">Contact</a>
     <a href="shops.html">Shops</a>
   </nav>
-
-  <!-- Map -->
-  <div id="map"></div>
 
   <!-- Shop List -->
   <div class="shop-list" id="shopList"></div>
@@ -118,60 +111,28 @@
   </div>
 
   <script>
-    // Example shop data (replace with real-time data from backend)
+    // Example shop data (you can expand this later)
     const shops = [
-      { name: "Green Market", lat: -0.420, lng: 36.947, open: "08:00 AM", close: "08:00 PM" },
-      { name: "Cosmic Store", lat: -0.423, lng: 36.950, open: "09:00 AM", close: "09:00 PM" },
-      { name: "Faith Groceries", lat: -0.425, lng: 36.940, open: "07:30 AM", close: "07:00 PM" }
+      { name: "Green Market", open: "08:00 AM", close: "08:00 PM", location: "Central Nyeri" },
+      { name: "Cosmic Store", open: "09:00 AM", close: "09:00 PM", location: "Karatina Road" },
+      { name: "Faith Groceries", open: "07:30 AM", close: "07:00 PM", location: "Gitunduti Market" }
     ];
 
-    // Initialize Google Map
-    function initMap() {
-      const center = { lat: -0.423, lng: 36.947 }; // adjust to your area
-      const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 14,
-        center: center
-      });
-
-      // Add markers
-      shops.forEach(shop => {
-        const marker = new google.maps.Marker({
-          position: { lat: shop.lat, lng: shop.lng },
-          map: map,
-          title: shop.name
-        });
-
-        const infoWindow = new google.maps.InfoWindow({
-          content: `
-            <h3>${shop.name}</h3>
-            <p>Open: ${shop.open} - Close: ${shop.close}</p>
-            <a class="back-link" href="index.html">Go to Main Site</a>
-          `
-        });
-
-        marker.addListener("click", () => {
-          infoWindow.open(map, marker);
-        });
-      });
-
-      // Populate shop list
-      const shopListDiv = document.getElementById("shopList");
-      shops.forEach(shop => {
-        const div = document.createElement("div");
-        div.className = "shop";
-        div.innerHTML = `
-          <h3>${shop.name}</h3>
-          <p>Opens at: ${shop.open}</p>
-          <p>Closes at: ${shop.close}</p>
-          <p>Location: (${shop.lat}, ${shop.lng})</p>
-          <a class="back-link" href="index.html">Go to Main Site</a>
-        `;
-        shopListDiv.appendChild(div);
-      });
-    }
+    // Populate shop list
+    const shopListDiv = document.getElementById("shopList");
+    shops.forEach(shop => {
+      const div = document.createElement("div");
+      div.className = "shop";
+      div.innerHTML = `
+        <h3>${shop.name}</h3>
+        <p>Opens at: ${shop.open}</p>
+        <p>Closes at: ${shop.close}</p>
+        <p>Location: ${shop.location}</p>
+        <a class="back-link" href="index.html">Go to Main Site</a>
+        <a class="back-link" href="contact.html">Contact Us</a>
+      `;
+      shopListDiv.appendChild(div);
+    });
   </script>
-
-  <!-- Load Google Maps API (replace YOUR_API_KEY with your actual key) -->
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
 </body>
 </html>
