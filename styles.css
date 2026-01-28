@@ -5,7 +5,7 @@ body {
   min-height: 100vh;
   font-family: Arial, sans-serif;
   color: #333;
-  background: #f4f4f4; /* default background for content pages */
+  background: #e0e0e0; /* slightly darker background so cards stand out */
   transition: opacity 0.4s ease-in-out;
   opacity: 0;
 }
@@ -93,12 +93,13 @@ header {
 
 /* Section cards (unified for all pages) */
 .shop, .news-item, .event, .activity, .about, .contact, .home {
-  background: white;
+  background: rgba(255,255,255,0.95); /* semi-transparent white for contrast */
   border-radius: 8px;
   padding: 1rem;
   margin: 1.5rem auto;
   max-width: 900px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25); /* stronger shadow so cards pop */
+  color: #333; /* force readable dark text inside cards */
 }
 .shop h3, .news-item h2, .event h2, .activity h2,
 .about h2, .contact h2, .home h2 {
@@ -171,14 +172,9 @@ header {
   text-align: center;
   margin: 2rem auto;
   max-width: 900px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.6s ease;
-}
-.message.highlight, .statement.highlight {
-  opacity: 1;
+  opacity: 1; /* make visible by default */
   transform: translateY(0);
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.6); /* subtle glow */
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4); /* subtle glow */
 }
 
 /* Footer */
