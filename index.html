@@ -166,9 +166,9 @@
   <div class="menu">
     <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
     <div class="dropdown" id="dropdown">
-      <a href="#" onclick="showSearchBox()">Search</a>
+      <a href="#" onclick="toggleSearchBox()">Search</a>
       <a href="news.html">News</a>
-      <a href="shops.html">Shops</a> <!-- connects to shops page -->
+      <a href="shops.html">Shops</a>
       <a href="events.html">Events</a>
       <a href="activities.html">Activities</a>
     </div>
@@ -192,7 +192,10 @@
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
-    <a href="shops.html">Shops</a> <!-- added shops link in nav -->
+    <a href="shops.html">Shops</a>
+    <a href="news.html">News</a>
+    <a href="events.html">Events</a>
+    <a href="activities.html">Activities</a>
   </nav>
 
   <!-- Arrow Buttons -->
@@ -206,10 +209,12 @@
       document.getElementById("dropdown").classList.toggle("show");
     }
 
-    function showSearchBox() {
+    function toggleSearchBox() {
       const box = document.getElementById("search-box");
-      box.classList.add("show");
-      document.getElementById("search-input").focus();
+      box.classList.toggle("show"); // toggles on/off
+      if (box.classList.contains("show")) {
+        document.getElementById("search-input").focus();
+      }
     }
 
     // Handle search input
@@ -225,7 +230,7 @@
         } else if (query.includes("news")) {
           window.location.href = "news.html";
         } else if (query.includes("shops")) {
-          window.location.href = "shops.html"; // search connects to shops page
+          window.location.href = "shops.html";
         } else if (query.includes("events")) {
           window.location.href = "events.html";
         } else if (query.includes("activities")) {
