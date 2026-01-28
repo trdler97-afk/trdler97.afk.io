@@ -103,13 +103,16 @@
       color: #00ffff;
     }
 
-    /* Dropdown */
+    /* Dropdown with smooth animation */
     .dropdown {
-      display: none;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.5s ease, opacity 0.5s ease;
       position: absolute;
       top: 50px;
       right: 0;
-      background: rgba(0, 0, 0, 0.6); /* transparent dark background */
+      background: rgba(0, 0, 0, 0.6);
       border: 1px solid #00ffcc;
       border-radius: 5px;
       min-width: 150px;
@@ -125,10 +128,30 @@
       background: rgba(0, 255, 255, 0.2);
       color: #00ffff;
     }
-
-    /* Show dropdown when active */
     .dropdown.show {
-      display: block;
+      max-height: 300px; /* enough space for links */
+      opacity: 1;
+    }
+
+    /* Search box with smooth slide */
+    #search-box {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.5s ease, opacity 0.5s ease;
+      margin-top: 10px;
+    }
+    #search-box.show {
+      max-height: 60px;
+      opacity: 1;
+    }
+    #search-input {
+      padding: 8px;
+      width: 200px;
+      border: 2px solid #00ffcc;
+      border-radius: 5px;
+      background: rgba(0,0,0,0.6);
+      color: white;
     }
   </style>
 </head>
@@ -143,11 +166,15 @@
   <div class="menu">
     <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
     <div class="dropdown" id="dropdown">
-      <a href="search.html">Search</a>
+      <a href="#" onclick="showSearchBox()">Search</a>
       <a href="news.html">News</a>
       <a href="shops.html">Shops</a>
       <a href="events.html">Events</a>
       <a href="activities.html">Activities</a>
+    </div>
+    <!-- Search Box -->
+    <div id="search-box">
+      <input type="text" id="search-input" placeholder="Type and press Enter...">
     </div>
   </div>
 
@@ -177,6 +204,36 @@
     function toggleMenu() {
       document.getElementById("dropdown").classList.toggle("show");
     }
+
+    function showSearchBox() {
+      const box = document.getElementById("search-box");
+      box.classList.add("show");
+      document.getElementById("search-input").focus();
+    }
+
+    // Handle search input
+    document.getElementById("search-input").addEventListener("keypress", function(e) {
+      if (e.key === "Enter") {
+        let query = e.target.value.toLowerCase().trim();
+        if (query.includes("home")) {
+          window.location.href = "index.html";
+        } else if (query.includes("about")) {
+          window.location.href = "about.html";
+        } else if (query.includes("contact")) {
+          window.location.href = "contact.html";
+        } else if (query.includes("news")) {
+          window.location.href = "news.html";
+        } else if (query.includes("shops")) {
+          window.location.href = "shops.html";
+        } else if (query.includes("events")) {
+          window.location.href = "events.html";
+        } else if (query.includes("activities")) {
+          window.location.href = "activities.html";
+        } else {
+          alert("Page not found on this site.");
+        }
+      }
+    });
   </script>
 </body>
 </html>
