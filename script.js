@@ -16,8 +16,7 @@ function setActiveLink() {
 
   links.forEach(link => {
     if (link.getAttribute("href") === currentPage) {
-      link.style.color = "#00cc00"; // darker green for active page
-      link.style.textDecoration = "underline";
+      link.classList.add("active-link"); // use CSS class instead of inline styles
     }
   });
 }
@@ -29,13 +28,11 @@ function setupOpenClose() {
   const siteContent = document.getElementById("siteContent");
 
   if (openBtn && closeBtn && siteContent) {
-    // Show content
     openBtn.addEventListener("click", () => {
       siteContent.style.display = "block";
       openBtn.style.display = "none";
     });
 
-    // Hide content
     closeBtn.addEventListener("click", () => {
       siteContent.style.display = "none";
       openBtn.style.display = "inline-block";
@@ -45,14 +42,21 @@ function setupOpenClose() {
 
 // Toggle dropdown menu
 function toggleMenu() {
-  document.getElementById("dropdown").classList.toggle("show");
+  const dropdown = document.getElementById("dropdown");
+  if (dropdown) {
+    dropdown.classList.toggle("show");
+  }
 }
 
-// Show search box with smooth animation
-function showSearchBox() {
+// Toggle search box with smooth animation
+function toggleSearchBox() {
   const box = document.getElementById("search-box");
-  box.classList.add("show");
-  document.getElementById("search-input").focus();
+  if (box) {
+    box.classList.toggle("show");
+    if (box.classList.contains("show")) {
+      document.getElementById("search-input").focus();
+    }
+  }
 }
 
 // Handle search input
@@ -60,27 +64,48 @@ function setupSearch() {
   const searchInput = document.getElementById("search-input");
   if (!searchInput) return;
 
+  const pages = {
+    home: "index.html",
+    about: "about.html",
+    contact: "contact.html",
+    news: "news.html",
+    shops: "shops.html",
+    events: "events.html",
+    activities: "activities.html"
+  };
+
   searchInput.addEventListener("keypress", function(e) {
     if (e.key === "Enter") {
       let query = e.target.value.toLowerCase().trim();
-      if (query.includes("home")) {
-        window.location.href = "index.html";
-      } else if (query.includes("about")) {
-        window.location.href = "about.html";
-      } else if (query.includes("contact")) {
-        window.location.href = "contact.html";
-      } else if (query.includes("news")) {
-        window.location.href = "news.html";
-      } else if (query.includes("shops")) {
-        window.location.href = "shops.html";
-      } else if (query.includes("events")) {
-        window.location.href = "events.html";
-      } else if (query.includes("activities")) {
-        window.location.href = "activities.html";
-      } else {
-        alert("Page not found on this site.");
+      let found = false;
+      for (const key in pages) {
+        if (query.includes(key)) {
+          window.location.href = pages[key];
+          found = true;
+          break;
+        }
       }
+      if (!found) alert("Page not found on this site.");
     }
+  });
+}
+
+// Smooth page transitions
+function setupPageTransitions() {
+  document.body.classList.add("fade-in");
+
+  const links = document.querySelectorAll("a[href]");
+  links.forEach(link => {
+    link.addEventListener("click", function(e) {
+      const target = this.getAttribute("href");
+      if (target && !target.startsWith("http") && !target.startsWith("#")) {
+        e.preventDefault();
+        document.body.classList.remove("fade-in");
+        setTimeout(() => {
+          window.location.href = target;
+        }, 400); // match CSS transition timing
+      }
+    });
   });
 }
 
@@ -89,4 +114,5 @@ document.addEventListener("DOMContentLoaded", () => {
   setActiveLink();
   setupOpenClose();
   setupSearch();
+  setupPageTransitions();
 });
