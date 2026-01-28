@@ -82,58 +82,12 @@
       transform: scale(1.1);
     }
 
-    /* Menu button */
+    /* Search box with smooth slide */
     .menu {
       position: absolute;
       top: 20px;
       right: 20px;
     }
-    .menu-btn {
-      background: transparent;
-      border: 2px solid #00ffcc;
-      border-radius: 5px;
-      padding: 10px 15px;
-      color: #00ffcc;
-      font-size: 18px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    .menu-btn:hover {
-      background: rgba(0, 255, 255, 0.2);
-      color: #00ffff;
-    }
-
-    /* Dropdown with smooth animation */
-    .dropdown {
-      max-height: 0;
-      overflow: hidden;
-      opacity: 0;
-      transition: max-height 0.5s ease, opacity 0.5s ease;
-      position: absolute;
-      top: 50px;
-      right: 0;
-      background: rgba(0, 0, 0, 0.6);
-      border: 1px solid #00ffcc;
-      border-radius: 5px;
-      min-width: 150px;
-    }
-    .dropdown a {
-      display: block;
-      padding: 10px;
-      color: #00ffcc;
-      text-decoration: none;
-      transition: background 0.3s ease;
-    }
-    .dropdown a:hover {
-      background: rgba(0, 255, 255, 0.2);
-      color: #00ffff;
-    }
-    .dropdown.show {
-      max-height: 300px; /* enough space for links */
-      opacity: 1;
-    }
-
-    /* Search box with smooth slide */
     #search-box {
       max-height: 0;
       overflow: hidden;
@@ -162,17 +116,9 @@
     Your browser does not support HTML5 video.
   </video>
 
-  <!-- Menu Button -->
+  <!-- Menu with only Search Bar -->
   <div class="menu">
-    <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
-    <div class="dropdown" id="dropdown">
-      <a href="#" onclick="toggleSearchBox()">Search</a>
-      <a href="news.html">News</a>
-      <a href="shops.html">Shops</a>
-      <a href="events.html">Events</a>
-      <a href="activities.html">Activities</a>
-    </div>
-    <!-- Search Box -->
+    <button onclick="toggleSearchBox()">🔍 Search</button>
     <div id="search-box">
       <input type="text" id="search-input" placeholder="Type and press Enter...">
     </div>
@@ -205,13 +151,9 @@
   </div>
 
   <script>
-    function toggleMenu() {
-      document.getElementById("dropdown").classList.toggle("show");
-    }
-
     function toggleSearchBox() {
       const box = document.getElementById("search-box");
-      box.classList.toggle("show"); // toggles on/off
+      box.classList.toggle("show");
       if (box.classList.contains("show")) {
         document.getElementById("search-input").focus();
       }
@@ -221,23 +163,22 @@
     document.getElementById("search-input").addEventListener("keypress", function(e) {
       if (e.key === "Enter") {
         let query = e.target.value.toLowerCase().trim();
-        if (query.includes("home")) {
-          window.location.href = "index.html";
-        } else if (query.includes("about")) {
-          window.location.href = "about.html";
-        } else if (query.includes("contact")) {
-          window.location.href = "contact.html";
-        } else if (query.includes("news")) {
-          window.location.href = "news.html";
-        } else if (query.includes("shops")) {
-          window.location.href = "shops.html";
-        } else if (query.includes("events")) {
-          window.location.href = "events.html";
-        } else if (query.includes("activities")) {
-          window.location.href = "activities.html";
-        } else {
-          alert("Page not found on this site.");
+        const pages = {
+          home: "index.html",
+          about: "about.html",
+          contact: "contact.html",
+          news: "news.html",
+          shops: "shops.html",
+          events: "events.html",
+          activities: "activities.html"
+        };
+        for (const key in pages) {
+          if (query.includes(key)) {
+            window.location.href = pages[key];
+            return;
+          }
         }
+        alert("Page not found on this site.");
       }
     });
   </script>
