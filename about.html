@@ -9,7 +9,9 @@
       margin: 0;
       padding: 0;
       min-height: 100vh;
-      background: radial-gradient(circle at top, #001f4d, #000033); /* deep blue night sky */
+      /* Background image only */
+      background: url("IMG_20250615_113530_240.jpg") no-repeat center center fixed;
+      background-size: cover;
       color: white;
       font-family: Arial, sans-serif;
       display: flex;
@@ -23,7 +25,7 @@
 
     h1, h2, h3 {
       text-decoration: underline;
-      text-decoration-color: #ffff00; /* bright yellow underline */
+      text-decoration-color: #ffff00;
       margin-bottom: 1em;
     }
 
@@ -31,6 +33,9 @@
       max-width: 700px;
       line-height: 1.6;
       font-size: 1.1em;
+      background-color: rgba(0,0,0,0.5); /* optional readability layer */
+      padding: 10px;
+      border-radius: 8px;
     }
 
     nav {
@@ -48,7 +53,6 @@
       text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
     }
 
-    /* Arrow buttons */
     .arrow-buttons {
       position: absolute;
       bottom: 80px;
@@ -72,7 +76,6 @@
       transform: scale(1.1);
     }
 
-    /* Stars effect */
     .stars {
       position: absolute;
       width: 100%;
@@ -131,17 +134,13 @@
     In many ways, my life has been shaped not only by those around me but by the changes to my world which are inherent of the cosmic forces by which I wield no power to sway in my favour but only by the glory of those who went before us and those who will come after us and look at us with nothing but pity, for this shall all come to pass.
   </p>
 
-  <!-- Navigation -->
   <nav>
     <a href="index.html">Home</a> |
     <a href="contact.html">Contact</a>
   </nav>
 
-  <!-- Arrow Buttons -->
   <div class="arrow-buttons">
-    <!-- Left arrow goes to Index (loop backwards) -->
     <button class="arrow-btn" onclick="location.href='index.html'">&#8592;</button>
-    <!-- Right arrow goes to Contact (loop forwards) -->
     <button class="arrow-btn" onclick="location.href='contact.html'">&#8594;</button>
   </div>
 </body>
