@@ -62,28 +62,20 @@
     .back-link:hover {
       background: #00ffff;
     }
-    /* Next/Back buttons */
-    .arrow-buttons {
-      display: flex;
-      justify-content: space-between;
-      width: 180px;
-      margin: 30px auto;
+    /* Bottom site links */
+    .site-links {
+      text-align: center;
+      margin: 30px 0;
     }
-    .arrow-btn {
-      background-color: #00cc99;
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 24px;
-      cursor: pointer;
-      box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
-      transition: background-color 0.3s ease, transform 0.3s ease;
-      color: white;
+    .site-links a {
+      margin: 0 10px;
+      color: #009977;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s ease;
     }
-    .arrow-btn:hover {
-      background-color: #00ffff;
-      transform: scale(1.1);
+    .site-links a:hover {
+      color: #00cc99;
     }
   </style>
 </head>
@@ -107,10 +99,14 @@
   <!-- Shop List -->
   <div class="shop-list" id="shopList"></div>
 
-  <!-- Next/Back buttons -->
-  <div class="arrow-buttons">
-    <button class="arrow-btn" onclick="location.href='events.html'">&#8592;</button>
-    <button class="arrow-btn" onclick="location.href='contact.html'">&#8594;</button>
+  <!-- Bottom site links -->
+  <div class="site-links">
+    <a href="index.html">Home</a> |
+    <a href="about.html">About</a> |
+    <a href="activities.html">Activities</a> |
+    <a href="events.html">Events</a> |
+    <a href="news.html">News</a> |
+    <a href="contact.html">Contact</a>
   </div>
 
   <script>
