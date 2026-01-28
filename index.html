@@ -168,7 +168,7 @@
     <div class="dropdown" id="dropdown">
       <a href="#" onclick="showSearchBox()">Search</a>
       <a href="news.html">News</a>
-      <a href="shops.html">Shops</a>
+      <a href="shops.html">Shops</a> <!-- connects to shops page -->
       <a href="events.html">Events</a>
       <a href="activities.html">Activities</a>
     </div>
@@ -192,6 +192,7 @@
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
+    <a href="shops.html">Shops</a> <!-- added shops link in nav -->
   </nav>
 
   <!-- Arrow Buttons -->
@@ -224,7 +225,7 @@
         } else if (query.includes("news")) {
           window.location.href = "news.html";
         } else if (query.includes("shops")) {
-          window.location.href = "shops.html";
+          window.location.href = "shops.html"; // search connects to shops page
         } else if (query.includes("events")) {
           window.location.href = "events.html";
         } else if (query.includes("activities")) {
