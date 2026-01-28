@@ -9,22 +9,29 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background: #0b0c10;
-      color: #c5c6c7;
+      background: #f4f4f4; /* same light background as shops */
+      color: #333;
     }
     header {
-      background: #1f2833;
+      background: #00cc99; /* match shops header */
       padding: 1rem;
+      text-align: center;
+      color: white;
+    }
+    nav {
+      background: #009977;
+      padding: 10px;
       text-align: center;
     }
     nav a {
-      color: #66fcf1;
+      color: white;
       margin: 0 1rem;
       text-decoration: none;
       font-weight: bold;
+      transition: color 0.3s ease;
     }
     nav a:hover {
-      text-decoration: underline;
+      color: #00ffff;
     }
     .events-container {
       max-width: 900px;
@@ -32,20 +39,20 @@
       padding: 1rem;
     }
     .event {
-      background: #1f2833;
+      background: white;
       border-radius: 8px;
       padding: 1rem;
       margin-bottom: 1.5rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
     .event h2 {
-      color: #66fcf1;
+      color: #00cc99;
       margin-top: 0;
     }
     .event time {
       display: block;
       font-size: 0.9rem;
-      color: #45a29e;
+      color: #009977;
       margin-bottom: 0.5rem;
     }
     .nav-buttons {
@@ -55,17 +62,28 @@
       max-width: 300px;
     }
     .nav-buttons a {
-      background: #45a29e;
+      background: #00cc99;
       border: none;
       padding: 0.7rem 1.2rem;
       border-radius: 6px;
-      color: #0b0c10;
+      color: white;
       font-weight: bold;
       text-decoration: none;
       transition: background 0.3s ease;
     }
     .nav-buttons a:hover {
-      background: #66fcf1;
+      background: #00ffff;
+      color: #333;
+    }
+    /* Message section */
+    .message {
+      background: #009977;
+      color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      margin-top: 2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
   </style>
 </head>
@@ -102,6 +120,15 @@
       <p>Showcase your projects, share your journey, and connect with fellow creators.</p>
     </section>
 
+    <!-- Added message -->
+    <div class="message">
+      <h2>A Note to Visitors</h2>
+      <p>
+        Thank you for exploring our upcoming events. Each gathering is designed to inspire creativity, 
+        foster authentic connections, and celebrate growth. We look forward to seeing you there!
+      </p>
+    </div>
+
     <!-- Page-to-page navigation -->
     <div class="nav-buttons">
       <a href="activities.html">&#8592; Previous</a>
@@ -109,7 +136,7 @@
     </div>
   </main>
 
-  <footer style="text-align:center; padding:1rem; background:#1f2833;">
+  <footer style="text-align:center; padding:1rem; background:#009977; color:white;">
     <p>&copy; 2026 Tommark. All rights reserved.</p>
   </footer>
 </body>
