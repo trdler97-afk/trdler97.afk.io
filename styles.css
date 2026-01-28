@@ -5,17 +5,38 @@ body {
   min-height: 100vh;
   font-family: Arial, sans-serif;
   color: #333;
-  background: #e0e0e0; /* slightly darker background so cards stand out */
   transition: opacity 0.4s ease-in-out;
   opacity: 0;
+  position: relative;
+  overflow-x: hidden;
 }
 body.fade-in {
   opacity: 1;
 }
 
+/* Background video */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* ensures video fills screen */
+  z-index: -2;         /* behind everything */
+}
+
+/* Optional overlay for readability */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4); /* darkens video slightly */
+  z-index: -1;
+}
+
 /* Cosmic background (for index or special pages) */
 body.cosmic {
-  background: radial-gradient(circle at top, #001f4d, #000033);
   color: white;
   display: flex;
   flex-direction: column;
@@ -32,7 +53,7 @@ body.cosmic {
   top: 0; left: 0;
   width: 100%; height: 100%;
   pointer-events: none;
-  z-index: -1;
+  z-index: 0; /* above video, below text */
 }
 .cosmic .stars::before {
   content: "";
