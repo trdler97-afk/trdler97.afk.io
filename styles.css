@@ -59,7 +59,7 @@
     }
 
     /* Enter/Close buttons */
-    #openBtn, #closeBtn {
+    #openBtn, #closeBtn, .shopsBtn {
       background-color: #00ffcc;
       border: none;
       border-radius: 25px;
@@ -69,8 +69,10 @@
       box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
       transition: background-color 0.3s ease, transform 0.3s ease;
       margin-top: 20px;
+      color: #000033;
+      font-weight: bold;
     }
-    #openBtn:hover, #closeBtn:hover {
+    #openBtn:hover, #closeBtn:hover, .shopsBtn:hover {
       background-color: #00ffff;
       transform: scale(1.1);
     }
@@ -90,6 +92,11 @@
       Learning a new skill, improving yourself, or just figuring out what your purpose was meant to be is hard, very very hard. 
       But if you hold on for just long enough and believe, then everything will fall right into place.
     </p>
+
+    <!-- Shops button -->
+    <a href="shops.html">
+      <button class="shopsBtn">Visit Shops</button>
+    </a>
 
     <!-- Close button -->
     <button id="closeBtn">Close Site</button>
