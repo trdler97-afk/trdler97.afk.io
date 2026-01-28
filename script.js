@@ -43,8 +43,50 @@ function setupOpenClose() {
   }
 }
 
+// Toggle dropdown menu
+function toggleMenu() {
+  document.getElementById("dropdown").classList.toggle("show");
+}
+
+// Show search box with smooth animation
+function showSearchBox() {
+  const box = document.getElementById("search-box");
+  box.classList.add("show");
+  document.getElementById("search-input").focus();
+}
+
+// Handle search input
+function setupSearch() {
+  const searchInput = document.getElementById("search-input");
+  if (!searchInput) return;
+
+  searchInput.addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+      let query = e.target.value.toLowerCase().trim();
+      if (query.includes("home")) {
+        window.location.href = "index.html";
+      } else if (query.includes("about")) {
+        window.location.href = "about.html";
+      } else if (query.includes("contact")) {
+        window.location.href = "contact.html";
+      } else if (query.includes("news")) {
+        window.location.href = "news.html";
+      } else if (query.includes("shops")) {
+        window.location.href = "shops.html";
+      } else if (query.includes("events")) {
+        window.location.href = "events.html";
+      } else if (query.includes("activities")) {
+        window.location.href = "activities.html";
+      } else {
+        alert("Page not found on this site.");
+      }
+    }
+  });
+}
+
 // Run when page loads
 document.addEventListener("DOMContentLoaded", () => {
   setActiveLink();
   setupOpenClose();
+  setupSearch();
 });
