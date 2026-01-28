@@ -9,8 +9,9 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f4f4f4; /* same background as shops */
-      color: #333;
+      /* Dark gradient background */
+      background: linear-gradient(to bottom, #001f4d, #000033);
+      color: #f0f0f0; /* light text for contrast */
     }
     nav {
       background: #009977;
@@ -47,11 +48,12 @@
       padding: 1rem;
     }
     .news-item {
-      background: white;
+      background: rgba(255,255,255,0.9); /* semi-transparent card */
       border-radius: 8px;
       padding: 1rem;
       margin-bottom: 1.5rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      color: #333; /* dark text inside cards */
     }
     .news-item h2 {
       color: #00cc99;
@@ -84,7 +86,7 @@
       border-radius: 8px;
       text-align: center;
       margin-top: 2rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
     }
     footer {
       text-align: center;
