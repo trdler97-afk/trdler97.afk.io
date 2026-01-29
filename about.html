@@ -7,49 +7,37 @@
   <style>
     body {
       margin: 0;
-      padding: 20px;
-      min-height: 100vh;
-      color: white;
       font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+    }
+
+    section {
+      min-height: 100vh; /* each section fills the screen */
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
-      text-align: center;
-      overflow: auto; /* allow scrolling for long content */
-      position: relative;
-
-      /* Multiple background images stacked downward */
-      background: 
-        url("OIP (1).webp") no-repeat center top fixed,
-        url("OIP.webp") no-repeat center center fixed,
-        url("climbing-mount-kenya-is-history.webp") no-repeat center bottom fixed;
-      background-size: cover, cover, cover;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed; /* nice parallax effect */
+      padding: 20px;
     }
 
     h1, h2, h3 {
       text-decoration: underline;
       text-decoration-color: #ffff00;
       margin-bottom: 1em;
-      text-shadow: 0 0 8px #ffff66, 0 0 12px #ffcc00; /* glowing effect */
+      text-shadow: 0 0 8px #ffff66, 0 0 12px #ffcc00;
     }
 
-    p {
+    p, ul {
       max-width: 900px;
+      background-color: rgba(0,0,0,0.6);
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 1em;
       line-height: 1.6;
-      font-size: 1.1em;
-      background-color: rgba(0,0,0,0.6);
-      padding: 12px;
-      border-radius: 8px;
-      margin-bottom: 1em;
-    }
-
-    ul {
-      max-width: 900px;
-      text-align: left;
-      background-color: rgba(0,0,0,0.6);
-      padding: 12px;
-      border-radius: 8px;
-      margin-bottom: 1em;
     }
 
     nav {
@@ -89,68 +77,43 @@
       background-color: #00ffff;
       transform: scale(1.1);
     }
-
-    .stars {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      background: transparent;
-      overflow: hidden;
-      z-index: -1; /* above background, below text */
-    }
-    .stars::before, .stars::after {
-      content: '';
-      position: absolute;
-      width: 2px;
-      height: 2px;
-      background: white;
-      border-radius: 50%;
-      box-shadow:
-        50px 100px white,
-        150px 200px white,
-        250px 50px white,
-        350px 300px white,
-        450px 150px white,
-        550px 250px white,
-        650px 100px white,
-        750px 200px white,
-        850px 50px white,
-        950px 300px white;
-      animation: twinkle 6s infinite alternate;
-    }
-    .stars::after {
-      box-shadow:
-        100px 50px white,
-        200px 250px white,
-        300px 150px white,
-        400px 300px white,
-        500px 50px white,
-        600px 200px white,
-        700px 250px white,
-        800px 100px white,
-        900px 150px white,
-        1000px 250px white;
-      animation: twinkle 8s infinite alternate;
-    }
-    @keyframes twinkle {
-      from { opacity: 0.3; transform: translateY(0px); }
-      to   { opacity: 1; transform: translateY(-10px); }
-    }
   </style>
 </head>
 <body>
-  <div class="stars"></div>
 
-  <h1>COSMIC ORIGINS</h1>
+  <!-- Section 1 -->
+  <section style="background-image: url('climbing-mount-kenya-is-history.webp');">
+    <h1>COSMIC ORIGINS</h1>
+    <p>
+      In many ways, my life has been shaped not only by those around me but by the changes to my world which are inherent of the cosmic forces...
+    </p>
+  </section>
 
-  <!-- Mount Kenya Narrative Section -->
-  <h1>🌄 Climbing Mount Kenya – A Journey Through Spirit and Stone</h1>
+  <!-- Section 2 -->
+  <section style="background-image: url('OIP.webp');">
+    <h1>🌄 Climbing Mount Kenya – A Journey Through Spirit and Stone</h1>
+    <h2>The Call to Adventure</h2>
+    <p>Dawn breaks over the jagged peaks of <strong>Batian, Nelion, and Point Lenana</strong>...</p>
+    <ul>
+      <li><strong>Kikuyu</strong> – believe Ngai, their god, dwells atop the mountain.</li>
+      <li><strong>Meru</strong> – see it as a source of strength and identity.</li>
+      <li><strong>Embu</strong> – tell stories of rivers flowing from its heart.</li>
+      <li><strong>Kamba</strong> – weave legends of journeys circling its base.</li>
+    </ul>
+  </section>
 
-  <!-- Your narrative content continues here... -->
+  <!-- Section 3 -->
+  <section style="background-image: url('OIP (1).webp');">
+    <h2>The Climb</h2>
+    <p>Thin air bites at the lungs, icy ridges demand courage. Nights are spent under a sky so clear the <strong>Milky Way spills across the heavens</strong>...</p>
+    <ul>
+      <li><strong>Lake Michaelson</strong> – a turquoise jewel cradled in volcanic rock.</li>
+      <li><strong>Glaciers</strong> – fragile remnants of an ancient world.</li>
+      <li><strong>Lammergeier</strong> – circling above with haunting cries.</li>
+    </ul>
+  </section>
 
-  <!-- Updated Navigation -->
+  <!-- Navigation -->
   <nav>
     <a href="index.html">Home</a>
     <a href="contact.html">Contact</a>
@@ -162,5 +125,6 @@
     <button class="arrow-btn" onclick="location.href='index.html'">&#8592;</button>
     <button class="arrow-btn" onclick="location.href='contact.html'">&#8594;</button>
   </div>
+
 </body>
 </html>
