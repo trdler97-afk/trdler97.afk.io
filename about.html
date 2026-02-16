@@ -12,45 +12,95 @@
       color: #333;
       text-align: center;
     }
-    header {
-      background: #00cc99;
-      color: white;
-      padding: 20px;
-    }
     h1, h2 {
       margin: 20px 0;
-      color: #00cc99;
-      text-shadow: 0 0 8px #00cc99;
+      color: #ffffff;
+      text-shadow: 0 0 8px #00cc99, 0 0 12px #3399ff;
     }
-    nav {
-      margin: 20px 0;
+
+    /* Section with background image and overlay */
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-image: url('climbing-mount-kenya-is-history.webp');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      position: relative;
+      padding: 20px;
     }
-    nav a {
-      color: #00ffcc;
+    section::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5); /* dark overlay */
+      z-index: 0;
+    }
+    section h1, section h2 {
+      position: relative;
+      z-index: 1; /* ensures text is above overlay */
+    }
+
+    /* Arrow buttons at bottom center */
+    .arrow-buttons {
+      text-align: center;
+      margin: 40px 0;
+    }
+    .arrow-btn {
+      display: inline-block;
+      margin: 0 15px;
+      padding: 12px 18px;
+      background: #009977;
+      color: white;
       text-decoration: none;
-      margin: 0 10px;
+      border-radius: 50%;
       font-weight: bold;
-      transition: color 0.3s ease;
+      font-size: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background 0.3s ease, transform 0.2s ease;
+      animation: glowPulse 3s infinite;
     }
-    nav a:hover {
-      color: #00ffff;
-      text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
+    .arrow-btn:hover {
+      background: #00cc99;
+      transform: scale(1.1);
+    }
+
+    /* Multi-color glowing effect */
+    @keyframes glowPulse {
+      0% {
+        box-shadow: 0 0 10px #00cc99, 0 0 20px #00cc99, 0 0 30px #00cc99;
+      }
+      25% {
+        box-shadow: 0 0 10px #3399ff, 0 0 20px #3399ff, 0 0 30px #3399ff;
+      }
+      50% {
+        box-shadow: 0 0 10px #9933ff, 0 0 20px #9933ff, 0 0 30px #9933ff;
+      }
+      75% {
+        box-shadow: 0 0 10px #ff3399, 0 0 20px #ff3399, 0 0 30px #ff3399;
+      }
+      100% {
+        box-shadow: 0 0 10px #00cc99, 0 0 20px #00cc99, 0 0 30px #00cc99;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header>
+  <!-- Section with restored background image -->
+  <section>
     <h1>COSmic Origins</h1>
     <h2>🌄 Climbing Mount Kenya – A Journey Through Spirit and Stone</h2>
-  </header>
+  </section>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="contact.html">Contact</a>
-    <a href="shops.html">Shops</a>
-  </nav>
+  <!-- Arrow Buttons -->
+  <div class="arrow-buttons">
+    <a class="arrow-btn" href="index.html">←</a>
+    <a class="arrow-btn" href="shops.html">→</a>
+  </div>
 
 </body>
 </html>
