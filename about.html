@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +19,7 @@
       text-shadow: 0 0 8px #00cc99, 0 0 12px #3399ff;
     }
 
-    /* Section with background image and overlay */
+    /* Section with background image */
     section {
       min-height: 100vh;
       display: flex;
@@ -29,19 +30,7 @@
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-      position: relative;
       padding: 20px;
-    }
-    section::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.5); /* dark overlay */
-      z-index: 0;
-    }
-    section h1, section h2 {
-      position: relative;
-      z-index: 1; /* ensures text is above overlay */
     }
 
     /* Arrow buttons at bottom center */
@@ -90,7 +79,7 @@
 </head>
 <body>
 
-  <!-- Section with restored background image -->
+  <!-- Section with background image -->
   <section>
     <h1>COSmic Origins</h1>
     <h2>🌄 Climbing Mount Kenya – A Journey Through Spirit and Stone</h2>
