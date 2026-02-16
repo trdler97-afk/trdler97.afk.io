@@ -14,10 +14,20 @@
       text-align: center;
     }
 
-    /* Fullscreen background image */
+    /* Default: desktop/laptop immersive background */
     body {
       background: url('climbing-mount-kenya-is-history.webp') no-repeat center center fixed;
       background-size: cover;
+    }
+
+    /* Mobile: show full image naturally */
+    @media (max-width: 768px) {
+      body {
+        background: url('climbing-mount-kenya-is-history.webp') no-repeat center center;
+        background-size: contain;   /* keeps full image visible */
+        background-attachment: scroll; /* avoids fixed cropping issues on mobile */
+        background-color: #000;     /* fills behind if needed */
+      }
     }
 
     h1, h2 {
@@ -78,7 +88,7 @@
 <body>
 
   <h1>COSmic Origins</h1>
-  <h2> Climbing Mount Kenya – A Journey Through Spirit and Stone</h2>
+  <h2>🌄 Climbing Mount Kenya – A Journey Through Spirit and Stone</h2>
 
   <!-- Arrow Buttons -->
   <div class="arrow-buttons">
