@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,26 +35,26 @@
     .shop p {
       margin: 5px 0;
     }
-    /* Arrow buttons styled with cosmic blue */
+    /* Arrow buttons at bottom */
     .arrow-buttons {
-      margin-top: 10px;
       text-align: center;
+      margin: 30px 0;
     }
     .arrow-btn {
       display: inline-block;
-      margin: 0 10px;
-      padding: 10px 16px;
-      background: #1e3a8a; /* cosmic deep blue */
+      margin: 0 15px;
+      padding: 12px 18px;
+      background: #009977; /* matches site theme */
       color: white;
       text-decoration: none;
       border-radius: 50%;
       font-weight: bold;
-      font-size: 18px;
+      font-size: 20px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       transition: background 0.3s ease, transform 0.2s ease;
     }
     .arrow-btn:hover {
-      background: #3b82f6; /* lighter cosmic blue */
+      background: #00cc99; /* lighter shade on hover */
       transform: scale(1.1);
     }
   </style>
@@ -66,6 +67,12 @@
 
   <!-- Shop List -->
   <div class="shop-list" id="shopList"></div>
+
+  <!-- Arrow buttons at bottom -->
+  <div class="arrow-buttons">
+    <a class="arrow-btn" href="about.html">←</a>
+    <a class="arrow-btn" href="contact.html">→</a>
+  </div>
 
   <script>
     // Example shop data
@@ -85,10 +92,6 @@
         <p>Opens at: ${shop.open}</p>
         <p>Closes at: ${shop.close}</p>
         <p>Location: ${shop.location}</p>
-        <div class="arrow-buttons">
-          <a class="arrow-btn" href="about.html">←</a>
-          <a class="arrow-btn" href="contact.html">→</a>
-        </div>
       `;
       shopListDiv.appendChild(div);
     });
