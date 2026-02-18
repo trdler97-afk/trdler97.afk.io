@@ -1,80 +1,55 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shops Directory</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      color: #333;
-    }
-    header {
-      background: #00cc99;
-      color: white;
-      padding: 15px;
-      text-align: center;
-    }
-    .shop-list {
-      padding: 20px;
-    }
-    .shop {
-      background: white;
-      margin-bottom: 15px;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .shop h3 {
-      margin: 0 0 10px;
-      color: #00cc99;
-    }
-    .shop p {
-      margin: 5px 0;
-    }
-    /* Arrow buttons at bottom */
-    .arrow-buttons {
-      text-align: center;
-      margin: 30px 0;
-    }
-    .arrow-btn {
-      display: inline-block;
-      margin: 0 15px;
-      padding: 12px 18px;
-      background: #009977; /* matches site theme */
-      color: white;
-      text-decoration: none;
-      border-radius: 50%;
-      font-weight: bold;
-      font-size: 20px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: background 0.3s ease, transform 0.2s ease;
-      animation: glowPulse 3s infinite; /* glowing effect every 3s */
-    }
-    .arrow-btn:hover {
-      background: #00cc99; /* lighter shade on hover */
-      transform: scale(1.1);
-    }
+  <title>Shops — The Auditor</title>
 
-    /* Keyframes for multi-color glowing effect */
+  <!-- SEO Meta Description -->
+  <meta name="description" content="Explore The Auditor's Shops Directory — discover local stores, opening hours, and locations including Green Market, Cosmic Store, and Lilian's Groceries.">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://yourdomain.com/shops.html">
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://yourdomain.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Shops",
+        "item": "https://yourdomain.com/shops.html"
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #f4f4f4; color: #333; }
+    header { background: #00cc99; color: white; padding: 15px; text-align: center; }
+    .shop-list { padding: 20px; }
+    .shop { background: white; margin-bottom: 15px; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .shop h3 { margin: 0 0 10px; color: #00cc99; }
+    .shop p { margin: 5px 0; }
+    .arrow-buttons { text-align: center; margin: 30px 0; }
+    .arrow-btn { display: inline-block; margin: 0 15px; padding: 12px 18px; background: #009977; color: white; text-decoration: none; border-radius: 50%; font-weight: bold; font-size: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); transition: background 0.3s ease, transform 0.2s ease; animation: glowPulse 3s infinite; }
+    .arrow-btn:hover { background: #00cc99; transform: scale(1.1); }
     @keyframes glowPulse {
-      0% {
-        box-shadow: 0 0 10px #00cc99, 0 0 20px #00cc99, 0 0 30px #00cc99;
-      }
-      25% {
-        box-shadow: 0 0 10px #3399ff, 0 0 20px #3399ff, 0 0 30px #3399ff;
-      }
-      50% {
-        box-shadow: 0 0 10px #9933ff, 0 0 20px #9933ff, 0 0 30px #9933ff;
-      }
-      75% {
-        box-shadow: 0 0 10px #ff3399, 0 0 20px #ff3399, 0 0 30px #ff3399;
-      }
-      100% {
-        box-shadow: 0 0 10px #00cc99, 0 0 20px #00cc99, 0 0 30px #00cc99;
-      }
+      0% { box-shadow: 0 0 10px #00cc99, 0 0 20px #00cc99, 0 0 30px #00cc99; }
+      25% { box-shadow: 0 0 10px #3399ff, 0 0 20px #3399ff, 0 0 30px #3399ff; }
+      50% { box-shadow: 0 0 10px #9933ff, 0 0 20px #9933ff, 0 0 30px #9933ff; }
+      75% { box-shadow: 0 0 10px #ff3399, 0 0 20px #ff3399, 0 0 30px #ff3399; }
+      100% { box-shadow: 0 0 10px #00cc99, 0 0 20px #00cc99, 0 0 30px #00cc99; }
     }
   </style>
 </head>
@@ -87,21 +62,19 @@
   <!-- Shop List -->
   <div class="shop-list" id="shopList"></div>
 
-  <!-- Arrow buttons at bottom -->
+  <!-- Arrow buttons -->
   <div class="arrow-buttons">
     <a class="arrow-btn" href="about.html">←</a>
     <a class="arrow-btn" href="contact.html">→</a>
   </div>
 
   <script>
-    // Example shop data
     const shops = [
       { name: "Green Market", open: "08:00 AM", close: "08:00 PM", location: "Central Nyeri" },
       { name: "Cosmic Store", open: "09:00 AM", close: "09:00 PM", location: "Karatina Road" },
       { name: "Lilian's Groceries", open: "07:30 AM", close: "07:00 PM", location: "Gitunduti Market" }
     ];
 
-    // Populate shop list
     const shopListDiv = document.getElementById("shopList");
     shops.forEach(shop => {
       const div = document.createElement("div");
