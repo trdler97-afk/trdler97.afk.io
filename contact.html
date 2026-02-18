@@ -3,93 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Tommark</title>
+  <title>Contact — The Auditor</title>
+
+  <!-- SEO Meta Description -->
+  <meta name="description" content="Get in touch with The Auditor — reach us via phone, GitHub profile, or future contact form. Stay connected for updates and collaboration.">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://yourdomain.com/contact.html">
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://yourdomain.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Contact",
+        "item": "https://yourdomain.com/contact.html"
+      }
+    ]
+  }
+  </script>
+
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      min-height: 100vh;
-      background: #f4f4f4; /* same as shops.html */
-      color: #333; /* match shops text color */
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: relative;
-    }
-
-    h1, h2, h3 {
-      text-decoration: underline;
-      text-decoration-color: #00cc99; /* match shops theme color */
-      margin-bottom: 1em;
-    }
-
-    p {
-      max-width: 700px;
-      line-height: 1.6;
-      font-size: 1.1em;
-    }
-
-    nav {
-      margin-top: 20px;
-    }
-    nav a {
-      color: #009977; /* match shops theme */
-      text-decoration: none;
-      margin: 0 10px;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-    nav a:hover {
-      color: #00cc99;
-      text-shadow: 0 0 5px #00cc99, 0 0 10px #00cc99;
-    }
-
-    /* Arrow buttons */
-    .arrow-buttons {
-      position: absolute;
-      bottom: 80px;
-      display: flex;
-      justify-content: space-between;
-      width: 160px;
-    }
-    .arrow-btn {
-      background-color: #009977; /* matches shops theme */
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 24px;
-      cursor: pointer;
-      color: white;
-      box-shadow: 0 0 10px rgba(0, 153, 119, 0.7);
-      transition: background-color 0.3s ease, transform 0.3s ease;
-      animation: glowPulse 3s infinite;
-    }
-    .arrow-btn:hover {
-      background-color: #00cc99;
-      transform: scale(1.1);
-    }
-
-    /* Glow animation to match shops.html */
+    body { margin: 0; padding: 0; min-height: 100vh; background: #f4f4f4; color: #333; font-family: Arial, sans-serif; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; }
+    h1, h2, h3 { text-decoration: underline; text-decoration-color: #00cc99; margin-bottom: 1em; }
+    p { max-width: 700px; line-height: 1.6; font-size: 1.1em; }
+    nav { margin-top: 20px; }
+    nav a { color: #009977; text-decoration: none; margin: 0 10px; font-weight: bold; transition: color 0.3s ease; }
+    nav a:hover { color: #00cc99; text-shadow: 0 0 5px #00cc99, 0 0 10px #00cc99; }
+    .arrow-buttons { position: absolute; bottom: 80px; display: flex; justify-content: space-between; width: 160px; }
+    .arrow-btn { background-color: #009977; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 24px; cursor: pointer; color: white; box-shadow: 0 0 10px rgba(0, 153, 119, 0.7); transition: background-color 0.3s ease, transform 0.3s ease; animation: glowPulse 3s infinite; }
+    .arrow-btn:hover { background-color: #00cc99; transform: scale(1.1); }
     @keyframes glowPulse {
-      0% {
-        box-shadow: 0 0 10px #00cc99, 0 0 20px #00cc99, 0 0 30px #00cc99;
-      }
-      25% {
-        box-shadow: 0 0 10px #3399ff, 0 0 20px #3399ff, 0 0 30px #3399ff;
-      }
-      50% {
-        box-shadow: 0 0 10px #9933ff, 0 0 20px #9933ff, 0 0 30px #9933ff;
-      }
-      75% {
-        box-shadow: 0 0 10px #ff3399, 0 0 20px #ff3399, 0 0 30px #ff3399;
-      }
-      100% {
-        box-shadow: 0 0 10px #00cc99, 0 0 20px #00cc99, 0 0 30px #00cc99;
-      }
+      0% { box-shadow: 0 0 10px #00cc99, 0 0 20px #00cc99, 0 0 30px #00cc99; }
+      25% { box-shadow: 0 0 10px #3399ff, 0 0 20px #3399ff, 0 0 30px #3399ff; }
+      50% { box-shadow: 0 0 10px #9933ff, 0 0 20px #9933ff, 0 0 30px #9933ff; }
+      75% { box-shadow: 0 0 10px #ff3399, 0 0 20px #ff3399, 0 0 30px #ff3399; }
+      100% { box-shadow: 0 0 10px #00cc99, 0 0 20px #00cc99, 0 0 30px #00cc99; }
     }
   </style>
 </head>
@@ -100,7 +59,7 @@
     Want to reach out? You can connect with me through my GitHub profile or future contact form.
   </p>
 
-  <!-- Updated Navigation -->
+  <!-- Navigation -->
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -110,9 +69,7 @@
 
   <!-- Arrow Buttons -->
   <div class="arrow-buttons">
-    <!-- Left arrow goes to shops -->
     <button class="arrow-btn" onclick="location.href='shops.html'">&#8592;</button>
-    <!-- Right arrow goes to Index -->
     <button class="arrow-btn" onclick="location.href='index.html'">&#8594;</button>
   </div>
 </body>
