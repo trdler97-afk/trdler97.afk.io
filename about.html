@@ -3,92 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Tommark</title>
+  <title>About — The Auditor</title>
+
+  <!-- SEO Meta Description -->
+  <meta name="description" content="Discover The Auditor — exploring cosmic origins, resilience, and journeys through Kenya’s natural wonders. Learn more about our vision and inspiration.">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://yourdomain.com/about.html">
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://yourdomain.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About",
+        "item": "https://yourdomain.com/about.html"
+      }
+    ]
+  }
+  </script>
+
   <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: Arial, sans-serif;
-      color: #fff;
-      text-align: center;
-    }
-
-    /* Default: desktop/laptop immersive background */
-    body {
-      background: url('climbing-mount-kenya-is-history.webp') no-repeat center center fixed;
-      background-size: cover;
-    }
-
-    /* Mobile: show full image naturally */
+    body, html { margin: 0; padding: 0; height: 100%; font-family: Arial, sans-serif; color: #fff; text-align: center; }
+    body { background: url('climbing-mount-kenya-is-history.webp') no-repeat center center fixed; background-size: cover; }
     @media (max-width: 768px) {
-      body {
-        background: url('climbing-mount-kenya-is-history.webp') no-repeat center center;
-        background-size: contain;   /* keeps full image visible */
-        background-attachment: scroll; /* avoids fixed cropping issues on mobile */
-        background-color: #000;     /* fills behind if needed */
-      }
+      body { background: url('climbing-mount-kenya-is-history.webp') no-repeat center center; background-size: contain; background-attachment: scroll; background-color: #000; }
     }
-
-    h1, h2 {
-      margin: 20px 0;
-      color: #ffffff;
-      text-shadow: 0 0 8px #00cc99, 0 0 12px #3399ff;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Arrow buttons at bottom center */
-    .arrow-buttons {
-      position: fixed;
-      bottom: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-      text-align: center;
-    }
-    .arrow-btn {
-      display: inline-block;
-      margin: 0 15px;
-      padding: 12px 18px;
-      background: #009977;
-      color: white;
-      text-decoration: none;
-      border-radius: 50%;
-      font-weight: bold;
-      font-size: 20px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: background 0.3s ease, transform 0.2s ease;
-      animation: glowPulse 3s infinite;
-    }
-    .arrow-btn:hover {
-      background: #00cc99;
-      transform: scale(1.1);
-    }
-
-    /* Multi-color glowing effect */
+    h1, h2 { margin: 20px 0; color: #ffffff; text-shadow: 0 0 8px #00cc99, 0 0 12px #3399ff; position: relative; z-index: 1; }
+    .arrow-buttons { position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%); text-align: center; }
+    .arrow-btn { display: inline-block; margin: 0 15px; padding: 12px 18px; background: #009977; color: white; text-decoration: none; border-radius: 50%; font-weight: bold; font-size: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); transition: background 0.3s ease, transform 0.2s ease; animation: glowPulse 3s infinite; }
+    .arrow-btn:hover { background: #00cc99; transform: scale(1.1); }
     @keyframes glowPulse {
-      0% {
-        box-shadow: 0 0 10px #00cc99, 0 0 20px #00cc99, 0 0 30px #00cc99;
-      }
-      25% {
-        box-shadow: 0 0 10px #3399ff, 0 0 20px #3399ff, 0 0 30px #3399ff;
-      }
-      50% {
-        box-shadow: 0 0 10px #9933ff, 0 0 20px #9933ff, 0 0 30px #9933ff;
-      }
-      75% {
-        box-shadow: 0 0 10px #ff3399, 0 0 20px #ff3399, 0 0 30px #ff3399;
-      }
-      100% {
-        box-shadow: 0 0 10px #00cc99, 0 0 20px #00cc99, 0 0 30px #00cc99;
-      }
+      0% { box-shadow: 0 0 10px #00cc99, 0 0 20px #00cc99, 0 0 30px #00cc99; }
+      25% { box-shadow: 0 0 10px #3399ff, 0 0 20px #3399ff, 0 0 30px #3399ff; }
+      50% { box-shadow: 0 0 10px #9933ff, 0 0 20px #9933ff, 0 0 30px #9933ff; }
+      75% { box-shadow: 0 0 10px #ff3399, 0 0 20px #ff3399, 0 0 30px #ff3399; }
+      100% { box-shadow: 0 0 10px #00cc99, 0 0 20px #00cc99, 0 0 30px #00cc99; }
     }
   </style>
 </head>
 <body>
 
   <h1>COSmic Origins</h1>
-  <h2> Climbing Mount Kenya – A Journey Through Spirit and Stone</h2>
+  <h2>Climbing Mount Kenya – A Journey Through Spirit and Stone</h2>
 
   <!-- Arrow Buttons -->
   <div class="arrow-buttons">
