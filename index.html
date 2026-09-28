@@ -16,27 +16,9 @@
       margin: 0; padding: 0; min-height: 100vh;
       font-family: Arial, sans-serif;
       color: #fff; text-align: center;
+      background: #111;
       display: flex; flex-direction: column;
       justify-content: center; align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
-    /* Background image */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: url('beautiful-modern-house-exterior-with-carport-modern-residential-district-and-minimalist-building-concept-by-ai-generated-free-photo.jpg') no-repeat center center;
-      background-size: cover;
-      z-index: -2;
-    }
-    /* Overlay for readability */
-    body::after {
-      content: "";
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.55);
-      z-index: -1;
     }
     h1, h2 {
       text-decoration: underline;
@@ -47,6 +29,7 @@
       max-width: 700px;
       line-height: 1.6;
       font-size: 1.1em;
+      margin-bottom: 2em;
     }
     nav { margin-top: 20px; }
     nav a {
@@ -58,10 +41,55 @@
       color: #fff;
       text-shadow: 0 0 5px #00cc99, 0 0 10px #00cc99;
     }
+    /* Gallery styling */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      width: 90%;
+      max-width: 1000px;
+      margin: 30px auto;
+    }
+    .gallery img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(0, 204, 153, 0.8);
+    }
+    /* Lightbox overlay */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.9);
+      justify-content: center; align-items: center;
+      z-index: 999;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+    .lightbox:target {
+      display: flex;
+    }
+    .close {
+      position: absolute;
+      top: 20px; right: 30px;
+      font-size: 30px;
+      color: #fff;
+      text-decoration: none;
+    }
     .arrow-buttons {
-      position: absolute; bottom: 60px;
-      display: flex; justify-content: space-between;
-      width: 160px;
+      margin-top: 30px;
+      display: flex; justify-content: center;
+      gap: 40px;
     }
     .arrow-btn {
       background-color: #009977; border: none;
@@ -76,11 +104,9 @@
       transform: scale(1.1);
     }
     @keyframes glowPulse {
-      0% { box-shadow: 0 0 10px #00cc99, 0 0 20px #00cc99, 0 0 30px #00cc99; }
-      25% { box-shadow: 0 0 10px #3399ff, 0 0 20px #3399ff, 0 0 30px #3399ff; }
-      50% { box-shadow: 0 0 10px #9933ff, 0 0 20px #9933ff, 0 0 30px #9933ff; }
-      75% { box-shadow: 0 0 10px #ff3399, 0 0 20px #ff3399, 0 0 30px #ff3399; }
-      100% { box-shadow: 0 0 10px #00cc99, 0 0 20px #00cc99, 0 0 30px #00cc99; }
+      0% { box-shadow: 0 0 10px #00cc99, 0 0 20px #00cc99; }
+      50% { box-shadow: 0 0 15px #3399ff, 0 0 25px #3399ff; }
+      100% { box-shadow: 0 0 10px #00cc99, 0 0 20px #00cc99; }
     }
   </style>
 </head>
@@ -100,6 +126,32 @@
     <a href="shops.html">Shops</a>
     <a href="contact.html">Contact</a>
   </nav>
+
+  <!-- Image Gallery -->
+  <div class="gallery">
+    <a href="#img1"><img src="beautiful-modern-house-exterior-with-carport-modern-residential-district-and-minimalist-building-concept-by-ai-generated-free-photo.jpg" alt="Modern House Exterior"></a>
+    <a href="#img2"><img src="4b383a40d08ea7e8be7a91b249bae83d.png" alt="Makazi Concept"></a>
+    <a href="#img3"><img src="A-statement-chandelier-in-the-living-room-becomes-the-focal-point-of-the-large-houses-interior-design.jpg" alt="Interior Design"></a>
+    <a href="#img4"><img src="Miami-Modern-Home-18.jpg" alt="Miami Modern Home"></a>
+  </div>
+
+  <!-- Lightbox Overlays -->
+  <div id="img1" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="beautiful-modern-house-exterior-with-carport-modern-residential-district-and-minimalist-building-concept-by-ai-generated-free-photo.jpg" alt="Modern House Exterior">
+  </div>
+  <div id="img2" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="4b383a40d08ea7e8be7a91b249bae83d.png" alt="Makazi Concept">
+  </div>
+  <div id="img3" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="A-statement-chandelier-in-the-living-room-becomes-the-focal-point-of-the-large-houses-interior-design.jpg" alt="Interior Design">
+  </div>
+  <div id="img4" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="Miami-Modern-Home-18.jpg" alt="Miami Modern Home">
+  </div>
 
   <!-- Arrow Buttons -->
   <div class="arrow-buttons">
