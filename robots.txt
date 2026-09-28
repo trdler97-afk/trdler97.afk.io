@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://trdler97-afk.github.io/trdler97.afk.io/sitemap.xml
